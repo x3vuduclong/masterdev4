@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Responsive checkout form</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <h3 class="main-title">Responsive Checkout Form</h3>
+    <form class="container" name="my-form">
+      <table>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td class="left">
+                  <p class="title">Billing Address</p>
+                  <p><i class="fa fa-user"></i> Full Name</p>
+                  <input
+                    type="text"
+                    name="full-name"
+                    placeholder="John M.Doe"
+                  />
+
+                  <p><i class="fa fa-envelope"></i> Email</p>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="john@example.com"
+                  />
+
+                  <p><i class="fa fa-address-card-o"></i> Address</p>
+                  <input
+                    type="text"
+                    name="address"
+                    placeholder="542 W. 15th Street"
+                  />
+
+                  <p><i class="fa fa-institution"></i> City</p>
+                  <input type="text" name="city" placeholder="fsdfs" />
+
+                  <table class="bottom">
+                    <tr>
+                      <td>
+                        <p>State</p>
+                        <input type="text" name="state" placeholder="NY" />
+                      </td>
+                      <td>
+                        <div class="right-el">
+                          <p>Zip</p>
+                          <input
+                            type="number"
+                            name="zip"
+                            placeholder="100001"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <!-- gap -->
+                <td class="right">
+                  <p class="title">Payment</p>
+                  <p>Accepted Cards</p>
+                  <div class="icon-container">
+                    <i class="fa fa-cc-visa" style="color: navy"></i>
+                    <i class="fa fa-cc-amex" style="color: blue"></i>
+                    <i class="fa fa-cc-mastercard" style="color: red"></i>
+                    <i class="fa fa-cc-discover" style="color: orange"></i>
+                  </div>
+
+                  <p>Name on Card</p>
+                  <input
+                    type="text"
+                    name="name-card"
+                    placeholder="John More Doe"
+                  />
+
+                  <p>Credit card number</p>
+                  <input
+                    type="number"
+                    name="credit-card-num"
+                    placeholder="1111-2222-3333-4444"
+                  />
+
+                  <p>Exp Month</p>
+                  <input
+                    type="month"
+                    name="exp-month"
+                    placeholder="September"
+                  />
+
+                  <table class="bottom">
+                    <tr>
+                      <td>
+                        <p>Exp Year</p>
+                        <input
+                          type="number"
+                          name="exp-year"
+                          placeholder="2018"
+                        />
+                      </td>
+                      <td>
+                        <div class="right-el">
+                          <p>CVV</p>
+                          <input type="number" name="CVV" placeholder="352" />
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <input type="checkbox" id="my-check" name="check" value="yes"/>
+            <label for="vehicle1"> Shipping address same as billing</label>
+            <br />
+            <button class="button button1" onclick="myFunc()">Green</button>
+          </td>
+          <td class="price-tbl">
+            <div class="price-content">
+              <table>
+                <tr>
+                  <td><strong>Cart</strong></td>
+                  <td class="price">
+                    <i class="fa fa-shopping-cart"></i><strong> 4</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="url">Product 1</a></td>
+                  <td class="price">$15</td>
+                </tr>
+                <tr>
+                  <td><a href="url">Product 2</a></td>
+                  <td class="price">$5</td>
+                </tr>
+                <tr>
+                  <td><a href="url">Product 3</a></td>
+                  <td class="price">$8</td>
+                </tr>
+                <tr>
+                  <td><a href="url">Product 4</a></td>
+                  <td class="price">$2</td>
+                </tr>
+              </table>
+              <hr />
+              <table>
+                <tr>
+                  <td>Total</td>
+                  <td class="price"><strong>$30</strong></td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <div id="result"></div>
+    <script src="index.js"></script>
+  </body>
+</html>

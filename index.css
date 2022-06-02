@@ -1,0 +1,92 @@
+.main-title {
+  margin-left: 600px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.container {
+  margin: 0 auto;
+  background-color: whitesmoke;
+  width: 780px;
+  height: 400px;
+}
+p {
+  margin: unset;
+}
+input:invalid{
+  border: 1px solid red;
+}
+
+.right-el {
+  margin-left: 30px;
+}
+.left {
+  width: 400px;
+}
+
+.left input {
+  width: 350px;
+  margin: 5px 0 10px 0;
+}
+
+.right {
+  width: 400px;
+}
+
+.right input {
+  width: 350px;
+  margin: 5px 0 10px 0;
+}
+
+.bottom input {
+  width: 150px;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 770px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #4caf50;
+} /* Green */
+
+.price-tbl {
+  vertical-align: top;
+}
+.price-content {
+  padding: 10px;
+  background-color: whitesmoke;
+  height: 200px;
+  width: 240px;
+  margin-left: 50px;
+}
+.price-content table tr td {
+  width: 100px;
+}
+.price {
+  text-align: end;
+}
+
+#result {
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 8px;
+  width: 50%;
+}
+
+#result th td {
+  border: 1px solid;
+}
