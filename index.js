@@ -46,18 +46,6 @@ heading_11.innerHTML = "Exp year";
 let heading_12 = document.createElement('th');
 heading_12.innerHTML = "CVV";
 
-let fullName = document.forms["my-form"]["full-name"].value;
-let email = document.forms["my-form"]["email"].value;
-let address = document.forms["my-form"]["address"].value;
-let city = document.forms["my-form"]["city"].value;
-let state = document.forms["my-form"]["state"].value;
-let zip = document.forms["my-form"]["zip"].value;
-let nameCard = document.forms["my-form"]["name-card"].value;
-let creditCardNum = document.forms["my-form"]["credit-card-num"].value;
-let expMonth = document.forms["my-form"]["exp-month"].value;
-let expYear = document.forms["my-form"]["exp-year"].value;
-let cvv = document.forms["my-form"]["CVV"].value;
-
 function errForm() {
     document.getElementById
         ("name").style.border = "1px solid red";
@@ -92,6 +80,17 @@ document.querySelector(".button").addEventListener("click", function (event) {
     if (check.checked != true) {
         alert("must check");
     } else {
+        let fullName = document.forms["my-form"]["full-name"].value;
+        let email = document.forms["my-form"]["email"].value;
+        let address = document.forms["my-form"]["address"].value;
+        let city = document.forms["my-form"]["city"].value;
+        let state = document.forms["my-form"]["state"].value;
+        let zip = document.forms["my-form"]["zip"].value;
+        let nameCard = document.forms["my-form"]["name-card"].value;
+        let creditCardNum = document.forms["my-form"]["credit-card-num"].value;
+        let expMonth = document.forms["my-form"]["exp-month"].value;
+        let expYear = document.forms["my-form"]["exp-year"].value;
+        let cvv = document.forms["my-form"]["CVV"].value;
         // let rs = fullName + " / " + email + " / " + address
         //     + " / " + city + " / " + state + " / " +
         //     zip + " / " + nameCard + " / " + creditCardNum
