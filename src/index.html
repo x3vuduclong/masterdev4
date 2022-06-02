@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/logoGHTK.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Master Dev</title>
+  </head>
+  <body>
+    <div class="title">
+      <h2 class="title__form">Responsive Checkout From</h2>
+      <p class="title__content">
+        Resize the browser window to see the effect. When the screen is less
+        than 800px wide, make the tow colum stack on top of each other instead
+        of next to each other.
+      </p>
+    </div>
+    <main id="main">
+      <!-- Form -->
+      <div class="block">
+        <form action="">
+          <div class="form">
+            <!-- Billing Address -->
+            <div class="form__billing">
+              <h3>Billing Address</h3>
+              <label for="fullname">
+                <div class="form__builling--item item">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <span>Full Name</span>
+                </div>
+                <input
+                  class="input"
+                  type="text"
+                  id="fullname"
+                  placeholder="John M. Doe"
+                />
+                <span class="log-error"></span>
+              </label>
+              <label for="email">
+                <div class="form__builling--item item">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>Email</span>
+                </div>
+                <input
+                  class="input"
+                  type="email"
+                  id="email"
+                  placeholder="john@example.com"
+                />
+                <span class="log-error"></span>
+              </label>
+              <label for="address">
+                <div class="form__builling--item item">
+                  <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                  <span>Address</span>
+                </div>
+                <input
+                  class="input"
+                  type="text"
+                  id="address"
+                  placeholder="542 W. 15th Street"
+                />
+                <span class="log-error"></span>
+              </label>
+              <label for="city">
+                <div class="form__builling--item item">
+                  <i class="fa fa-university" aria-hidden="true"></i>
+                  <span>City</span>
+                </div>
+                <input
+                  class="input"
+                  type="text"
+                  id="city"
+                  placeholder="New York"
+                />
+                <span class="log-error"></span>
+              </label>
+              <div class="divide">
+                <label for="state ">
+                  <div class="form__builling--item item">
+                    <span>State</span>
+                  </div>
+                  <input
+                    class="input"
+                    type="text"
+                    id="state"
+                    placeholder="NY"
+                  />
+                  <span class="log-error"></span>
+                </label>
+                <label for="zip">
+                  <div class="form__builling--item item">
+                    <span>Zip</span>
+                  </div>
+                  <input
+                    class="input"
+                    type="number"
+                    id="zip"
+                    placeholder="10001"
+                  />
+                  <span class="log-error log-error-zip"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="form__payment">
+              <h3>Payment</h3>
+              <div>
+                <div class="form__payment--item item" style="margin-top: 20px">
+                  <span>Accepted Cards</span>
+                </div>
+                <div class="icon__card" style="margin: 26px 0px 43px 0px">
+                  <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                  <i class="fa fa-cc-amex" aria-hidden="true"></i>
+                  <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+                  <i class="fa fa-cc-discover" aria-hidden="true"></i>
+                </div>
+              </div>
+              <label for="namecard">
+                <div class="form__payment--item item">
+                  <span>Name Card</span>
+                </div>
+                <input
+                  class="input"
+                  type="text"
+                  id="namecard"
+                  placeholder="John More Doe"
+                />
+                <span class="log-error"></span>
+              </label>
+              <label for="cardnumber">
+                <div class="form__payment--item item">
+                  <span>Credit card number</span>
+                </div>
+                <input
+                  class="input"
+                  type="number"
+                  id="cardnumber"
+                  placeholder="1111-2222-3333-4444"
+                />
+                <span class="log-error"></span>
+              </label>
+              <label for="month">
+                <div class="form__payment--item item">
+                  <span>Exp Month</span>
+                </div>
+                <input
+                  class="input"
+                  type="text"
+                  id="month"
+                  placeholder="Septemper"
+                />
+                <span class="log-error"></span>
+              </label>
+              <div class="divide">
+                <label for="year">
+                  <div class="form__payment--item item">
+                    <span>Exp Year</span>
+                  </div>
+                  <input
+                    class="input"
+                    type="number"
+                    id="year"
+                    placeholder="2018"
+                  />
+                  <span class="log-error"></span>
+                </label>
+                <label for="cvv">
+                  <div class="form__payment--item item">
+                    <span>CVV</span>
+                  </div>
+                  <input
+                    class="input"
+                    type="number"
+                    id="cvv"
+                    placeholder="352"
+                  />
+                  <span class="log-error"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkbox">
+            <label for="checked">
+              <input type="checkbox" name="" id="checked" />
+              <span>Shipping address same as billing</span>
+            </label>
+          </div>
+          <button id="submit" type="button">Continue to checkout</button>
+        </form>
+      </div>
+      <!-- Cart -->
+      <div class="cart block">
+        <div class="cart__title">
+          <h3>Cart</h3>
+          <span>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span>4</span>
+          </span>
+        </div>
+        <ul>
+          <li><a href="#">Product 1</a> <span>$15</span></li>
+          <li><a href="#">Product 2</a> <span>$5</span></li>
+          <li><a href="#">Product 3</a> <span>$8</span></li>
+          <li><a href="#">Product 4</a> <span>$2</span></li>
+        </ul>
+        <hr />
+        <div class="cart_total">
+          <h3>Total</h3>
+          <span>$30</span>
+        </div>
+      </div>
+    </main>
+    <table id="table" class="block">
+      <tr>
+        <th>Full Name</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Full Name</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>State</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Name Card</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Credit Card Number</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Exp Month</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Exp Year</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>CVV</th>
+        <td></td>
+      </tr>
+    </table>
+    <script defer src="./script.js"></script>
+  </body>
+</html>
