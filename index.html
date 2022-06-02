@@ -23,16 +23,20 @@
                   <p class="title">Billing Address</p>
                   <p><i class="fa fa-user"></i> Full Name</p>
                   <input
+                  id="name"
                     type="text"
                     name="full-name"
                     placeholder="John M.Doe"
+                    
                   />
 
                   <p><i class="fa fa-envelope"></i> Email</p>
                   <input
+                  id="email"
                     type="email"
                     name="email"
                     placeholder="john@example.com"
+                    
                   />
 
                   <p><i class="fa fa-address-card-o"></i> Address</p>
@@ -40,10 +44,11 @@
                     type="text"
                     name="address"
                     placeholder="542 W. 15th Street"
+                    
                   />
 
                   <p><i class="fa fa-institution"></i> City</p>
-                  <input type="text" name="city" placeholder="fsdfs" />
+                  <input type="text" name="city" placeholder="city" />
 
                   <table class="bottom">
                     <tr>
@@ -55,9 +60,11 @@
                         <div class="right-el">
                           <p>Zip</p>
                           <input
+                          id="zip"
                             type="number"
                             name="zip"
                             placeholder="100001"
+                            
                           />
                         </div>
                       </td>
@@ -77,23 +84,29 @@
 
                   <p>Name on Card</p>
                   <input
+                  id="name-card"
                     type="text"
                     name="name-card"
                     placeholder="John More Doe"
+                    
                   />
 
                   <p>Credit card number</p>
                   <input
+                  id="credit-card-num"
                     type="number"
                     name="credit-card-num"
                     placeholder="1111-2222-3333-4444"
+                   
                   />
 
                   <p>Exp Month</p>
                   <input
+                  id="exp-month"
                     type="month"
                     name="exp-month"
                     placeholder="September"
+                   
                   />
 
                   <table class="bottom">
@@ -101,15 +114,19 @@
                       <td>
                         <p>Exp Year</p>
                         <input
+                        id="exp-year"
                           type="number"
                           name="exp-year"
                           placeholder="2018"
+                          
                         />
                       </td>
                       <td>
                         <div class="right-el">
                           <p>CVV</p>
-                          <input type="number" name="CVV" placeholder="352" />
+                          <input
+                          id="cvv"
+                          type="number" name="CVV" placeholder="352" />
                         </div>
                       </td>
                     </tr>
@@ -117,10 +134,10 @@
                 </td>
               </tr>
             </table>
-            <input type="checkbox" id="my-check" name="check" value="yes"/>
+            <input type="checkbox" id="my-check" name="check" />
             <label for="vehicle1"> Shipping address same as billing</label>
             <br />
-            <button class="button button1" onclick="myFunc()">Green</button>
+            <input class="button button1" type="submit" onclick="myFunc()"></input>
           </td>
           <td class="price-tbl">
             <div class="price-content">

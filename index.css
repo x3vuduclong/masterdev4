@@ -13,9 +13,6 @@
 p {
   margin: unset;
 }
-input:invalid{
-  border: 1px solid red;
-}
 
 .right-el {
   margin-left: 30px;
@@ -42,9 +39,6 @@ input:invalid{
   width: 150px;
 }
 
-input:invalid {
-  border: 2px solid red;
-}
 
 .button {
   border: none;
