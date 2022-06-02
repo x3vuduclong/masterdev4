@@ -1,0 +1,249 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+ol, ul {
+    list-style: none;
+}
+html{
+    font-family: "Roboto", sans-serif;
+}
+
+.container{
+    display: flex;
+    /* justify-content: center; */
+    height: 100%;
+    margin-top: 50px
+}
+
+.form {
+    background-color: #f2f2f2;
+    flex: 3;
+    margin: 0 8px 12px;
+    border-radius: 3px;
+
+}
+
+
+.form-content{
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+}
+
+.billing{
+    flex:1;
+    margin: 20px 20px 0 20px
+}
+
+.payment{
+    flex:1;
+    margin: 20px
+}
+
+.content_item{
+    margin: 20px 0;
+    position: relative;
+}
+.d-half{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.d-half .half-item:first-child{
+    margin:0 10px 0 0;
+}
+.d-half .half-item:last-child{
+    margin:0 0 0 10px;
+}
+  
+.half-item{ 
+    width: 100%;
+    position: relative;
+}
+.billing-input:focus + .error{
+    transform: translateY(-35px);
+}
+.error{
+    position: absolute;
+    color: red;
+    font-size: 12px;
+    top: 60%;
+    right: 5%;
+    transition: .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    user-select: none;
+}
+
+.content_item > div, .half-item > span{
+    margin-bottom: 8px;
+    display: block;
+}
+
+.content_item .billing-input, .half-item .billing-input{
+    padding: 8px;
+    width: 100%;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.2);
+    transition: all .2s ease-in;
+}
+.content_item .billing-input:focus, .half-item .billing-input:focus{
+  outline: none;
+}
+
+.content-half{
+    margin-bottom: 8px;
+}
+
+.check-bill{
+    cursor: pointer;
+    user-select: none;
+}
+
+.payment-card > img{
+   height: 32px;
+}
+
+.form-submit{
+    margin:0 20px 20px 20px;
+    position: relative;
+}
+
+
+.form-btn{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    background-size: 300% 100%;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+.form-btn:hover{
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+}
+
+
+.form-btn.disabled{
+    background-image: none;
+    color: #fff;
+    cursor: no-drop;
+    box-shadow: none;
+    background-color: #888;
+}
+
+
+
+.cart{
+    background-color: #f2f2f2;
+    flex: 1;
+    margin:0 8px 12px;
+    padding: 0 20px 24px;
+    height: fit-content;
+    border-radius: 3px;
+}
+
+.cart-content{
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.cart-content > span{ 
+    font-size: 12px;
+    color: #888;
+}
+
+.cart-content > a{ 
+    color: #00b7ef;
+}
+
+
+.cart-content:first-child{
+    margin: 16px 0;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #888;
+    margin-top: 24px;
+    padding-top: 12px
+
+}
+.table{
+    margin: 0 8px 12px;
+}
+
+.table-container{
+    background-color: #fefefe;
+    margin: 0 auto 0;
+    padding: 20px;
+}
+
+.table-content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.table-left{
+    flex:1;
+    border: 1px solid #000;
+    border-right: none
+}
+.table-right{
+    flex: 5;
+    border: 1px solid #000
+
+}
+
+.table-text{
+    height: 36px;
+    padding: 8px ;
+    font-weight: bold;
+    background-color: #fff;
+    white-space: nowrap;
+}
+
+.table-text:nth-of-type(even){
+    background-color: rgb(211, 211, 211);
+}
+
+.table-text:last-child, .table-right > p:last-child{
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 576px) {
+    .container{
+        flex-direction: column-reverse;
+        margin-top: 0;
+    }
+    .cart{
+        margin: 8px;
+        width: auto;
+    }
+    .form-content{
+        flex-direction: column-reverse;
+    }
+    .payment{
+        margin-bottom: 0;
+    }
+    .d-half{
+        flex-direction: column;
+    }
+    .d-half .half-item:last-child{
+        margin: 20px 0 0 0 ;
+    }
+    .table-container{
+        padding: 0;
+    }
+}

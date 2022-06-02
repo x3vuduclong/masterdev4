@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+    <title>Form submit</title>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form" id="form-input">
+            <div class="form-content">
+
+                <div class="billing">
+                    <h3>Billing address</h3>
+                    <div class="content_item">
+                        <div>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <label for="fullName">Full name</label>
+                        </div>
+                        <input name="fullName" id="fullName" type="text" class="billing-input"
+                            placeholder="John M. Doe" />
+                        <span class="error" id="fullName_error"></span>
+                    </div>
+
+                    <div class="content_item">
+                        <div>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span>Email</span>
+                        </div>
+                        <input name="email" id="email" type="email" class="billing-input"
+                            placeholder="john@example.com" />
+                        <span class="error" id="email_error"></span>
+                    </div>
+
+                    <div class="content_item">
+                        <div>
+                            <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                            <span>Address</span>
+                        </div>
+                        <input name="address" id="address" type="text" class="billing-input"
+                            placeholder="542 W. 15th Street" />
+                        <span class="error" id="address_error"></span>
+                    </div>
+
+                    <div class="content_item">
+                        <div>
+                            <i class="fa fa-university" aria-hidden="true"></i>
+                            <span>City</span>
+                        </div>
+                        <input name="city" id="city" class="billing-input" placeholder="New York" />
+                        <span class="error" id="city_error"></span>
+                    </div>
+
+                    <div class="content_item d-half">
+                        <div class="half-item">
+                            <div class="content-half">
+                                <span>State</span>
+                            </div>
+                            <input name="state" id="state" class="billing-input" placeholder="NY" />
+                            <span class="error" id="state_error"></span>
+                        </div>
+                        <div class="half-item">
+                            <div class="content-half">
+                                <span>Zip</span>
+                            </div>
+                            <input name="zip" id="zip" type="text" class="billing-input" placeholder="10001" />
+                            <span class="error" id="zip_error"></span>
+                        </div>
+                    </div>
+
+                    <div class="content_item">
+                        <input id="check" type="checkbox">
+                        <label for="check" class="check-bill">Shipping address same as billing</label>
+                    </div>
+                </div>
+
+                <div class="payment">
+                    <h3>Payment</h3>
+                    <div class="content_item">
+                        <div>
+                            <span>Accepted card</span>
+                        </div>
+                        <div class="payment-card">
+                            <img src="./assets/img/major-credit-card-logos-png-5.png" />
+                        </div>
+                    </div>
+
+                    <div class="content_item">
+                        <div>
+                            <span>Name on card</span>
+
+                        </div>
+                        <input id="nameOnCard" name="nameOnCard" type="text" class="billing-input"
+                        placeholder="John More Doe" />
+                        <span class="error" id="nameOnCard_error"></span>
+                    </div>
+
+                    <div class="content_item">
+                        <div>
+                            <span>Credit card number</span>
+
+                        </div>
+                        <input id="cardNum" name="cardNum" type="text" class="billing-input"
+                        placeholder="1111-2222-3333-4444" />
+                        <span class="error" id="cardNum_error"></span>
+                    </div>
+
+                    <div class="content_item">
+                        <div>
+                            <span>Exp month</span>
+                        </div>
+                        <input type="text" id="month" name="month" class="billing-input" placeholder="September" />
+                        <span class="error" id="month_error"></span>
+                    </div>
+
+                    <div class="content_item d-half">
+                        <div class="half-item">
+                            <div class="content-half">
+                                <span>Exp year</span>
+                            </div>
+                            <input type="text" id="year" name="year" class="billing-input" placeholder="NY" />
+                            <span class="error" id="year_error"></span>
+                        </div>
+                        <div class="half-item">
+                            <div class="content-half">
+                                <span>CVV</span>
+                            </div>
+                            <input type="text" id="CVV" name="CVV" class="billing-input" placeholder="10001" />
+                            <span class="error" id="CVV_error"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="form-submit">
+                <button type="submit" id="btn" class="form-btn">
+                    Continue to checkout
+                </button>
+            </div>
+        </form>
+        <div class="cart">
+            <div class="cart-content">
+                <h4>Cart</h4>
+                <div>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span>4</span>
+                </div>
+            </div>
+
+            <div class="cart-content">
+                <a href="#">Product 1</a>
+
+                <span>$15</span>
+            </div>
+            <div class="cart-content">
+                <a href="#">Product 2</a>
+                <span>$5</span>
+            </div>
+            <div class="cart-content">
+                <a href="#">Product 3</a>
+                <span>$8</span>
+            </div>
+            <div class="cart-content">
+                <a href="#">Product 3</a>
+                <span>$2</span>
+            </div>
+
+            <div class="cart-total">
+                <p>Total</p>
+                <h3>$30</h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="table">
+        <div class="table-container">
+            <div class="table-content">
+                <div class="table-left">
+                    <p class=" table-text">1</p>
+                    <p class=" table-text">2</p>
+                    <p class=" table-text">3</p>
+                    <p class=" table-text">4</p>
+                    <p class=" table-text">5</p>
+                    <p class=" table-text">6</p>
+                    <p class=" table-text">7</p>
+                    <p class=" table-text">8</p>
+                    <p class=" table-text">9</p>
+                    <p class=" table-text">10</p>
+                    <p class=" table-text">11</p>
+                </div>
+                <div class="table-left">
+                    <p class=" table-text">Full name: </p>
+                    <p class=" table-text">Email: </p>
+                    <p class=" table-text">Address: </p>
+                    <p class=" table-text">City: </p>
+                    <p class=" table-text">State: </p>
+                    <p class=" table-text">Zip: </p>
+                    <p class=" table-text">Name on card: </p>
+                    <p class=" table-text">Credit card number: </p>
+                    <p class=" table-text">Exp month: </p>
+                    <p class=" table-text">Exp year: </p>
+                    <p class=" table-text">CVV: </p>
+                </div>
+                <div class="table-right">
+                    <p class="table-text" id="fullName_text"></p>
+                    <p class="table-text" id="email_text"></p>
+                    <p class="table-text" id="address_text"></p>
+                    <p class="table-text" id="city_text"></p>
+                    <p class="table-text" id="state_text"></p>
+                    <p class="table-text" id="zip_text"></p>
+                    <p class="table-text" id="nameOnCard_text"></p>
+                    <p class="table-text" id="cardNum_text"></p>
+                    <p class="table-text" id="month_text"></p>
+                    <p class="table-text" id="year_text"></p>
+                    <p class="table-text" id="CVV_text"></p>
+                </div>
+            </div>
+            <div class="table-content">
+                <p style="font-weight: bold; margin-right:8px;">Shipping address same as billing: </p>
+                <span id="ship_check"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
