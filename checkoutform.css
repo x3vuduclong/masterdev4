@@ -1,0 +1,128 @@
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.w1-2 {
+  width: 50%;
+}
+
+.header {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.bodyContainer {
+  margin: 2.5rem;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.formContainer2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkoutFormContainer {
+  background-color: gainsboro;
+  width: 100%;
+}
+
+.billingAddressContainer {
+  width: 100%;
+}
+
+.paymentContainer {
+  width: 100%;
+  padding-top: 1.5rem;
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: auto;
+  background-color: gainsboro;
+}
+
+.inputText {
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.inputSubmit {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+.inputSubmit:hover {
+  background-color: gray;
+  color: white;
+  padding: 1rem;
+}
+
+.paymentMethods {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+label {
+  margin-top: 1.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .checkoutFormContainer {
+    background-color: gainsboro;
+    width: 75%;
+    margin-right: 1rem;
+  }
+  .billingAddressContainer {
+    width: 50%;
+    padding-right: 1rem;
+  }
+  .formContainer2 {
+    display: flex;
+    flex-direction: row;
+  }
+  .paymentContainer {
+    width: 50%;
+    padding-top: 0rem;
+  }
+  .cartContainer {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 25%;
+    background-color: gainsboro;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="checkoutform.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet" />
+  <script defer src="checkoutform.js"></script>
+  <title>Checkout Form</title>
+</head>
+
+<body class="bodyContainer">
+  <header class="header">Checkout Form</header>
+  <main class="mainContainer">
+    <div class="checkoutFormContainer">
+      <form id="checkoutForm" class="formContainer">
+        <div class="formContainer2">
+          <div class="billingAddressContainer">
+            <h3>Billing Address</h3>
+            <div class="flex flex-col">
+              <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
+              <input required type="text" id="fullname" placeholder="Nguyen Hoai Thanh" class="inputText" />
+            </div>
+            <div class="flex flex-col">
+              <label for="email"><i class="fas fa-envelope"></i> Email</label>
+              <input required type="email" id="email" placeholder="thanhng@gmail.com" class="inputText" />
+            </div>
+            <div class="flex flex-col">
+              <label for="address"><i class="fas fa-address-card"></i> Address</label>
+              <input required type="text" id="address" placeholder="Phuc Dong, Long Bien, Ha Noi" class="inputText" />
+            </div>
+            <div class="flex flex-col">
+              <label for="city"><i class="fas fa-city"></i> City</label>
+              <input required type="text" id="city" placeholder="Hanoi" class="inputText" />
+            </div>
+
+            <div class="flex">
+              <div class="w1-2 pr-2">
+                <div class="flex flex-col">
+                  <label for="state">State</label>
+                  <input required type="text" id="state" placeholder="NY" class="inputText" />
+                </div>
+              </div>
+              <div class="w1-2">
+                <div class="flex flex-col">
+                  <label for="zip">Zip</label>
+                  <input required type="number" id="zip" placeholder="100001" class="inputText" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="paymentContainer">
+            <h3>Payment</h3>
+            <div class="flex flex-col">
+              <label>Accepted Cards</label>
+              <div class="flex paymentMethods">
+                <i class="fab fa-xl fa-cc-visa"></i>
+                <i class="fab fa-xl fa-cc-amex"></i>
+                <i class="fab fa-xl fa-cc-mastercard"></i>
+                <i class="fab fa-xl fa-cc-discover"></i>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <label for="nameoncard">Name on Card</label>
+              <input type="text" required id="nameoncard" placeholder="Nguyen Hoai Thanh" class="inputText" />
+            </div>
+            <div class="flex flex-col">
+              <label for="creditcard">Credit card number</label>
+              <input type="number" required id="creditcard" placeholder="1111-2222-3333-4444" class="inputText" />
+            </div>
+            <div class="flex flex-col">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" required id="expmonth" placeholder="September" class="inputText" />
+            </div>
+            <div class="flex">
+              <div class="w1-2">
+                <div class="flex flex-col">
+                  <label for="expyear">Exp Year</label>
+                  <input type="number" required id="expyear" placeholder="2018" class="inputText" />
+                </div>
+              </div>
+              <div class="w1-2">
+                <div class="flex flex-col">
+                  <label for="cvv">CVV</label>
+                  <input type="number" required id="cvv" placeholder="686" class="inputText" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <div>
+          <input type="checkbox" id="checkSameShipping" name="checkSameShipping" />
+          <label for="checkSameShipping" for="checkSameShipping">
+            Shipping address same as billing</label>
+        </div>
+        <br />
+        <input id="checkoutButton" action="POST" type="submit" value="Continue to checkout" class="inputSubmit">
+        </input>
+      </form>
+    </div>
+
+    <div class="cartContainer">
+      <div class="flex justify-between">
+        <h3>Cart</h3>
+        <h3> <i class="fa fa-shopping-cart"></i>4 </h3>
+      </div>
+      <div class="flex justify-between">
+        <a href="#">Item 1</a>
+        <div>$15</div>
+      </div>
+      <div class="flex justify-between">
+        <a href="#">Item 1</a>
+        <div>$5</div>
+      </div>
+      <div class="flex justify-between">
+        <a href="#">Item 1</a>
+        <div>$8</div>
+      </div>
+      <div class="flex justify-between">
+        <a href="#">Item 1</a>
+        <div>$2</div>
+      </div>
+      <br />
+      <div class="flex justify-between">
+        <div>Total</div>
+        <div>$30</div>
+      </div>
+      <br />
+    </div>
+  </main>
+</body>
+
+</html>
