@@ -19,6 +19,7 @@ function validate(target) {
     if (type === 'checkbox') {
         return check
     }
+    
     if (value.trim() === '') {
         checkError(name, `Field is required!`, false)
         return !check
@@ -46,10 +47,26 @@ function validate(target) {
         }
     }
 
-    if (name === 'zip' || name === 'cardNum' || name === 'year' || name === 'CVV' ) {
+    if (name === "zip") {
+        const re = /(^\d{5}$)|(^\d{5}-\d{4}$)/
+        if (!re.test(value)) {
+            checkError(name, `Zip code is invalid!`, false)
+            return !check
+        } else {
+            checkError(name, '', true)
+        }
+    }
+
+    if (name === 'cardNum' || name === 'year' || name === 'CVV') {
         const re = /^[0-9]+$/;
         if (!re.test(value)) {
             checkError(name, `Field contains numbers only!`, false)
+            return !check
+        } else if (name === "year" && value.length != 4) {
+            checkError(name, `Year is invalid!`, false)
+            return !check
+        } else if (name === 'CVV' && value.length != 3) {
+            checkError(name, `CVV is invalid!`, false)
             return !check
         } else {
             checkError(name, '', true)
@@ -81,7 +98,7 @@ function handleSubmit(e) {
         }
     }
 
-    for (let i = 0; i <= 11; i++ ) {
+    for (let i = 0; i <= 11; i++) {
         const { name, value, type } = e.target[i]
         if (type === 'checkbox') {
             if (e.target[i].checked) {
