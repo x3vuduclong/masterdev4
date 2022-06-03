@@ -204,8 +204,12 @@ html{
 }
 
 .form-btn:hover{
-    background-position: 100% 0;
-    transition: all .4s ease-in-out;
+    animation: buttonAnim infinite 1s linear forwards;
+}
+@keyframes buttonAnim {
+    100%{
+        background-position: 100% 0;
+    }
 }
 
 
