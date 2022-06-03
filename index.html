@@ -16,8 +16,19 @@
 </head>
 
 <body>
+    <div id="myNofity">
+        <div class="noti">
+            <div class="noti-content">
+                <div class="noti-check">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="noti-text"></div>
+            </div>
+            <div class="noti-progress"></div>
+        </div>
+    </div>
     <div class="container">
-        <form class="form" id="form-input">
+        <form class="form" id="myForm">
             <div class="form-content">
 
                 <div class="billing">
@@ -27,27 +38,25 @@
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <label for="fullName">Full name</label>
                         </div>
-                        <input name="fullName" id="fullName" type="text" class="billing-input"
-                            placeholder="John M. Doe" />
+                        <input name="fullName" id="fullName" type="text" class="form_input" placeholder="John M. Doe" />
                         <span class="error" id="fullName_error"></span>
                     </div>
 
                     <div class="content_item">
                         <div>
                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                            <span>Email</span>
+                            <label for="email">Email</label>
                         </div>
-                        <input name="email" id="email" type="email" class="billing-input"
-                            placeholder="john@example.com" />
+                        <input name="email" id="email" type="email" class="form_input" placeholder="john@example.com" />
                         <span class="error" id="email_error"></span>
                     </div>
 
                     <div class="content_item">
                         <div>
                             <i class="fa fa-address-card-o" aria-hidden="true"></i>
-                            <span>Address</span>
+                            <label for="address">Address</label>
                         </div>
-                        <input name="address" id="address" type="text" class="billing-input"
+                        <input name="address" id="address" type="text" class="form_input"
                             placeholder="542 W. 15th Street" />
                         <span class="error" id="address_error"></span>
                     </div>
@@ -55,25 +64,25 @@
                     <div class="content_item">
                         <div>
                             <i class="fa fa-university" aria-hidden="true"></i>
-                            <span>City</span>
+                            <label for="city">City</label>
                         </div>
-                        <input name="city" id="city" class="billing-input" placeholder="New York" />
+                        <input name="city" id="city" class="form_input" placeholder="New York" />
                         <span class="error" id="city_error"></span>
                     </div>
 
                     <div class="content_item d-half">
                         <div class="half-item">
                             <div class="content-half">
-                                <span>State</span>
+                                <label for="state">State</label>
                             </div>
-                            <input name="state" id="state" class="billing-input" placeholder="NY" />
+                            <input name="state" id="state" class="form_input" placeholder="NY" />
                             <span class="error" id="state_error"></span>
                         </div>
                         <div class="half-item">
                             <div class="content-half">
-                                <span>Zip</span>
+                                <label for="zip">Zip</label>
                             </div>
-                            <input name="zip" id="zip" type="text" class="billing-input" placeholder="10001" />
+                            <input name="zip" id="zip" type="text" class="form_input" placeholder="10001" />
                             <span class="error" id="zip_error"></span>
                         </div>
                     </div>
@@ -91,51 +100,62 @@
                             <span>Accepted card</span>
                         </div>
                         <div class="payment-card">
-                            <img src="./assets/img/major-credit-card-logos-png-5.png" />
+                            <a href="#">
+                                <img src="./assets/img/1.png" />
+                            </a>
+                            <a href="#">
+                                <img src="./assets/img/2.png" />
+                            </a>
+                            <a href="#">
+                                <img src="./assets/img/3.png" />
+                            </a>
+                            <a href="#">
+                                <img src="./assets/img/4.png" />
+                            </a>
                         </div>
                     </div>
 
                     <div class="content_item">
                         <div>
-                            <span>Name on card</span>
+                            <label for="nameOnCard">Name on card</label>
 
                         </div>
-                        <input id="nameOnCard" name="nameOnCard" type="text" class="billing-input"
-                        placeholder="John More Doe" />
+                        <input id="nameOnCard" name="nameOnCard" type="text" class="form_input"
+                            placeholder="John More Doe" />
                         <span class="error" id="nameOnCard_error"></span>
                     </div>
 
                     <div class="content_item">
                         <div>
-                            <span>Credit card number</span>
+                            <label for="cardNum">Credit card number</label>
 
                         </div>
-                        <input id="cardNum" name="cardNum" type="text" class="billing-input"
-                        placeholder="1111-2222-3333-4444" />
+                        <input id="cardNum" name="cardNum" type="text" class="form_input"
+                            placeholder="1111-2222-3333-4444" />
                         <span class="error" id="cardNum_error"></span>
                     </div>
 
                     <div class="content_item">
                         <div>
-                            <span>Exp month</span>
+                            <label for="month">Exp month</label>
                         </div>
-                        <input type="text" id="month" name="month" class="billing-input" placeholder="September" />
+                        <input type="text" id="month" name="month" class="form_input" placeholder="September" />
                         <span class="error" id="month_error"></span>
                     </div>
 
                     <div class="content_item d-half">
                         <div class="half-item">
                             <div class="content-half">
-                                <span>Exp year</span>
+                                <label for="year">Exp year</label>
                             </div>
-                            <input type="text" id="year" name="year" class="billing-input" placeholder="2018" />
+                            <input type="text" id="year" name="year" class="form_input" placeholder="2018" />
                             <span class="error" id="year_error"></span>
                         </div>
                         <div class="half-item">
                             <div class="content-half">
-                                <span>CVV</span>
+                                <label for="CVV">CVV</label>
                             </div>
-                            <input type="text" id="CVV" name="CVV" class="billing-input" placeholder="352" />
+                            <input type="text" id="CVV" name="CVV" class="form_input" placeholder="352" />
                             <span class="error" id="CVV_error"></span>
                         </div>
                     </div>

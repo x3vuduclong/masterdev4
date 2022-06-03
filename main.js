@@ -2,16 +2,17 @@ function getEL(id) {
     return document.querySelector(`#${id}`)
 }
 let btn = getEL('btn')
-let form = getEL('form-input')
-
-
-const inputs = document.querySelectorAll('input')
-inputs.forEach(input => {
-    input.addEventListener("focusout", (e) => validate(e.target))
-})
+let form = getEL('myForm')
+let myNofity = getEL('myNofity')
+const successColor = '#0ba360'
+const failColor = '#dc3545'
 
 form.addEventListener("submit", handleSubmit)
 
+let inputs = document.querySelectorAll('input')
+inputs.forEach(input => {
+    input.addEventListener("focusout", (e) => validate(e.target))
+})
 
 function validate(target) {
     const { name, value, type } = target
@@ -19,95 +20,138 @@ function validate(target) {
     if (type === 'checkbox') {
         return check
     }
-    
+
     if (value.trim() === '') {
-        checkError(name, `Field is required!`, false)
+        showError(name, `Field is required!`, false)
         return !check
     } else {
-        checkError(name, '', true)
+        showError(name, '', true)
     }
 
     if (type === 'email') {
         const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         if (!re.test(value)) {
-            checkError(name, `Email is invalid!`, false)
+            showError(name, `Email is invalid!`, false)
             return !check
         } else {
-            checkError(name, '', true)
+            showError(name, '', true)
         }
     }
 
     if (name === 'nameOnCard' || name === 'city') {
         const re = /^[a-zA-z] ?([a-zA-z]|[a-zA-z] )*[a-zA-z]$/;
         if (!re.test(value)) {
-            checkError(name, `Field contains letters only!`, false)
+            showError(name, `Field contains letters only!`, false)
             return !check
         } else {
-            checkError(name, '', true)
+            showError(name, '', true)
+        }
+    }
+
+    if (name === "month") {
+        const months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+        let index = months.findIndex((month) => month === value.trim().toLowerCase())
+        if (index == -1) {
+            showError(name, `Exp month is in valid!`, false)
+            return !check
+        } else {
+            showError(name, '', true)
         }
     }
 
     if (name === "zip") {
         const re = /(^\d{5}$)|(^\d{5}-\d{4}$)/
         if (!re.test(value)) {
-            checkError(name, `Zip code is invalid!`, false)
+            showError(name, `Zip code is invalid!`, false)
             return !check
         } else {
-            checkError(name, '', true)
+            showError(name, '', true)
         }
     }
 
     if (name === 'cardNum' || name === 'year' || name === 'CVV') {
         const re = /^[0-9]+$/;
         if (!re.test(value)) {
-            checkError(name, `Field contains numbers only!`, false)
+            showError(name, `Field contains numbers only!`, false)
             return !check
         } else if (name === "year" && value.length != 4) {
-            checkError(name, `Year is invalid!`, false)
+            showError(name, `Year is invalid!`, false)
             return !check
         } else if (name === 'CVV' && value.length != 3) {
-            checkError(name, `CVV is invalid!`, false)
+            showError(name, `CVV is invalid!`, false)
             return !check
         } else {
-            checkError(name, '', true)
+            showError(name, '', true)
         }
     }
 
     return check
 }
 
-function checkError(name, mess, check) {
+function createNotification(mess, check) {
+    let noti = document.querySelector('.noti')
+    let notiProgress = document.querySelector('.noti-progress')
+    let notiText = document.querySelector('.noti-text')
+    let notiCheck = document.querySelector('.noti-check')
+
+    noti.classList.add('active')
+    notiProgress.classList.add('active')
+    notiText.innerHTML = mess
+
     if (!check) {
-        getEL(`${name}`).style.borderColor = "red"
+        notiCheck.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>'
+        noti.style.borderLeftColor = failColor
+        notiCheck.style.backgroundColor = failColor
     } else {
-        getEL(`${name}`).style.borderColor = "green"
+        notiCheck.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>'
+        noti.style.borderLeftColor = successColor
+        notiCheck.style.backgroundColor = successColor
+    }
+
+    setTimeout(() => {
+        notiProgress.classList.remove('active')
+        noti.classList.remove('active')
+    }, 4000)
+}
+
+function showError(name, mess, check) {
+    if (!check) {
+        getEL(`${name}`).style.borderColor = failColor
+    } else {
+        getEL(`${name}`).style.borderColor = successColor
         btn.classList.remove('disabled')
     }
     getEL(`${name}_error`).innerHTML = mess
 }
 
-
 function handleSubmit(e) {
     e.preventDefault()
+    let errorCount = 0
     for (let i = 0; i <= 11; i++) {
         if (!validate(e.target[i])) {
-            btn.classList.add('disabled')
-            return
-        } else {
-            btn.classList.remove('disabled')
+            errorCount++
         }
     }
 
-    for (let i = 0; i <= 11; i++) {
-        const { name, value, type } = e.target[i]
-        if (type === 'checkbox') {
-            if (e.target[i].checked) {
-                getEL('ship_check').innerHTML = `<i style="color: green;" class="fa fa-check" aria-hidden="true"></i>`
-            } else {
-                getEL('ship_check').innerHTML = `<i style="color: red;" class="fa fa-times" aria-hidden="true"></i>`
+    if (errorCount != 0) {
+        btn.classList.add('disabled')
+        createNotification("Check fields and try again!", false)
+        return
+    } else {
+        btn.classList.remove('disabled')
+        createNotification("Submit successfully!", true)
+        for (let i = 0; i <= 11; i++) {
+            const { name, value, type } = e.target[i]
+            if (type === 'checkbox') {
+                if (e.target[i].checked) {
+                    getEL('ship_check').innerHTML = `<i style="color: ${successColor};" class="fa fa-check" aria-hidden="true"></i>`
+                } else {
+                    getEL('ship_check').innerHTML = `<i style="color: ${failColor};" class="fa fa-times" aria-hidden="true"></i>`
+                }
+                continue
             }
-            continue
+            getEL(`${name}_text`).innerHTML = `${value}`
         }
-        getEL(`${name}_text`).innerHTML = `${value}`
     }
+
 }

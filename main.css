@@ -11,6 +11,79 @@ ol, ul {
 html{
     font-family: "Roboto", sans-serif;
 }
+#myNofity{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+.noti{
+    position: relative;
+    background-color: #fff;
+    padding: 1rem 2rem 1rem 1rem;
+    border-left: 4px solid ;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(calc(100% + 20px));
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
+}
+
+.noti.active{
+    transform: translateX(0);
+}
+
+.noti-content{
+    display: flex;
+    transition: all .5s ease-in;
+    align-items: center;
+}
+
+.noti-check{
+    /* background-color: #0ba360; */
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.noti-check i {
+    color: #fff;
+}
+
+.noti-text{
+    color: #666;
+    margin-left: 12px;
+}
+
+.noti-progress{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}
+
+.noti-progress:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.noti-progress.active:before{
+    animation: progress 4s linear forwards;
+}
 
 .container{
     display: flex;
@@ -65,7 +138,7 @@ html{
     width: 100%;
     position: relative;
 }
-.billing-input:focus + .error{
+.form_input:focus + .error{
     transform: translateY(-35px);
 }
 .error{
@@ -83,14 +156,15 @@ html{
     display: block;
 }
 
-.content_item .billing-input, .half-item .billing-input{
+.content_item .form_input, .half-item .form_input{
     padding: 8px;
     width: 100%;
     border: 1px solid;
     border-color: rgba(0, 0, 0, 0.2);
     transition: all .2s ease-in;
 }
-.content_item .billing-input:focus, .half-item .billing-input:focus{
+
+.content_item .form_input:focus, .half-item .form_input:focus{
   outline: none;
 }
 
@@ -103,15 +177,19 @@ html{
     user-select: none;
 }
 
-.payment-card > img{
+.payment-card a{
+    text-decoration: none;
+}
+ 
+.payment-card a img{
    height: 32px;
+   margin-right: 2px;
 }
 
 .form-submit{
     margin:0 20px 20px 20px;
     position: relative;
 }
-
 
 .form-btn{
     width: 100%;
@@ -138,8 +216,6 @@ html{
     box-shadow: none;
     background-color: #888;
 }
-
-
 
 .cart{
     background-color: #f2f2f2;
@@ -246,4 +322,10 @@ html{
     .table-container{
         padding: 0;
     }
+}
+
+@keyframes progress {
+   100%{
+       right: 100%;
+   } 
 }
