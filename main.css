@@ -200,18 +200,12 @@ html{
     background-size: 300% 100%;
     transition: all .4s ease-in-out;
     background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
-    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
 .form-btn:hover{
-    animation: buttonAnim infinite 1s linear forwards;
+    animation: buttonAnim infinite 1s;
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
-@keyframes buttonAnim {
-    100%{
-        background-position: 100% 0;
-    }
-}
-
 
 .form-btn.disabled{
     background-image: none;
@@ -302,6 +296,22 @@ html{
     margin-bottom: 0px;
 }
 
+@keyframes progress {
+    100%{
+        right: 100%;
+    } 
+ }
+ 
+ @keyframes buttonAnim {
+     0%{
+         background-position: left;
+ 
+     }
+     100%{
+         background-position: right;
+     }
+ }
+
 @media screen and (max-width: 576px) {
     .container{
         flex-direction: column-reverse;
@@ -328,8 +338,4 @@ html{
     }
 }
 
-@keyframes progress {
-   100%{
-       right: 100%;
-   } 
-}
+
