@@ -52,7 +52,7 @@ function validate(target) {
         const months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
         let index = months.findIndex((month) => month === value.trim().toLowerCase())
         if (index == -1) {
-            showError(name, `Exp month is in valid!`, false)
+            showError(name, `Exp month is invalid!`, false)
             return !check
         } else {
             showError(name, '', true)
