@@ -150,7 +150,7 @@ function handleSubmit(e) {
                 }
                 continue
             }
-            getEL(`${name}_text`).innerHTML = `${value}`
+            getEL(`${name}_text`).innerHTML = value
         }
     }
 
