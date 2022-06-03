@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bai tap 1</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <div class="checkout-form">
+    <div class="checkout-form-title">
+      <h2>Responsive Checkout Form</h2>
+      <h4>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</h4>
+    </div>
+    <div class="checkout-form-detail">
+      <div class="checkout-form-contents">
+        <div class="checkout-form-content">
+          <form name="myForm" method="POST">
+            <div class="content-top">
+              <div class="content-address">
+                <h3>Billing Address</h3>
+                <div class="form-group">
+                  <label><i class="fa fa-user"></i>Full Name</label>
+                  <input class="form-control"  id="fullNameId" type="text" name="fullName" pattern="[a-zA-Z]{5,}" placeholder="Tran Ngoc Quy">
+                  <p id="fullName_error"></p>
+                </div>
+                <div class="form-group">
+                  <label><i class="fa fa-envelope"></i>Email</label>
+                  <input class="form-control" id="emailId" type="Email" name="email" placeholder="quytran541@gmail.com">
+                  <p id="email_error"></p>
+                </div>
+                <div class="form-group">
+                  <label><i class="fa fa-address-card-o"></i>Address</label>
+                  <input class="form-control" id="addressId" type="text" name="address" placeholder="136 Cau dien">
+                </div>
+                <div class="form-group">
+                  <label><i class="fa fa-bank"></i>City</label>
+                  <input class="form-control" id="cityId" type="text" name="city" placeholder="Ha Noi">
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-50">
+                      <div class="form-group">
+                        <label>State</label>
+                        <input class="form-control" id="stateId" type="" name="state" placeholder="NY">
+                      </div>
+                    </div>
+                    <div class="col-50 rig">
+                      <div class="form-group">
+                        <label>Zip</label>
+                        <input class="form-control" id="zipId" type="" name="zip" placeholder="1001">
+                        <p id="zip_error"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                  <input type="checkbox">
+                  <label style="margin-left: 5px;">Shipping address same as billing</label>
+                </div>
+              </div>
+              <div class="content-payment">
+                <h3>Payment</h3>
+                <div class="form-group">
+                  <label>Accepted Cards</label>
+                  <div class="img">
+                    <i class="fa fa-cc-visa"></i>
+                    <i class="fa fa-cc-amex"></i>
+                    <i class="fa fa-cc-mastercard"></i>
+                    <i class="fa fa-cc-discover"></i>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Name on Card</label>
+                  <input class="form-control" id="nameCardId" type="text" name="nameCard" placeholder="Tran Ngoc Quy">
+                  <p id="nameCard_error"></p>
+                </div>
+                <div class="form-group">
+                  <label>Credit card number</label>
+                  <input class="form-control" id="numberCardId" type="number" name="numberCard" placeholder="1111-2222-3333-4444">
+                  <p id="numberCard_error"></p>
+                </div>
+                <div class="form-group" style="display: flex;flex-direction: column;">
+                  <label>Exp Month</label>
+                 <!-- <input class="form-control" id="expMonthId" type="text" name="expMonth" placeholder="Octorber"> -->
+                  <select class="form-control" name="expMonth" id="expMonthId" style="width: 101%; height: 29px;margin-bottom: 20px;margin-top: 8px;">
+                    <option value="" ></option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-50">
+                      <div class="form-group">
+                        <label>Exp Year</label>
+                        <input class="form-control" id="expYearId" type="Year" name="expYear" placeholder="2022">
+                        <p id="expYear_error"></p>
+                      </div>
+                    </div>
+                    <div class="col-50 rig">
+                      <div class="form-group">
+                        <label>CVV</label>
+                        <input class="form-control" id="cvvId" type="number" name="cvv" placeholder="123">
+                        <p id="cvv_error"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-bottom">
+                <button class="btn" type="button" onclick="validateForm()" name="">Continue to checkout</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="checkout-form-product">
+        <dir class="form-product-cart">
+          <div class="product-cart">
+            <h3>Cart</h3>
+            <p><i class="fa fa-shopping-cart"></i>4</p>
+          </div>
+          <div class="product-contents">
+            <div class="product-content">
+              <h3>Product 1</h3>
+              <p>$15</p>
+            </div>
+            <div class="product-content">
+              <h3>Product 2</h3>
+              <p>$5</p>
+            </div>
+            <div class="product-content">
+              <h3>Product 3</h3>
+              <p>$8</p>
+            </div>
+            <div class="product-content">
+              <h3>Product 4</h3>
+              <p>$2</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <h3>Total</h3>
+            <p>$30</p>
+          </div>
+        </dir>
+      </div>
+    </div>
+  </div>
+  <div class="form" id="content">
+    <div class="user-form">
+      <div class="user-form-top">
+        <p>Full Name :</p>
+        <p class="table" id="fullNameIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>Email :</p>
+        <p class="table" id="emailIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>Address :</p>
+        <p id="addressIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>City :</p>
+        <p id="cityIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>State :</p>
+        <p id="stateIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>Zip :</p>
+        <p id="zipIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>Name on Card :</p>
+        <p id="nameCardIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>Credit card number :</p>
+        <p id="numberCardIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>Exp Month :</p>
+        <p id="expMonthIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>Exp Year :</p>
+        <p id="expYearIdd"></p>
+      </div>
+      <div class="user-form-top">
+        <p>CVV :</p>
+        <p id="cvvIdd"></p>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
