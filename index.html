@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+input:invalid {
+  border: 2px solid red !important;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Responsive Checkout Form</h2>
+<p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form>
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" required >
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" required >
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" required  >
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" required >
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required  pattern="[a-z]{1,15}">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" required >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" required  pattern="[a-z]{1,15}">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" required  pattern="[a-z]{1,15}">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" required  pattern="[a-z]{1,15}">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear"  required  pattern="[a-z]{1,15}">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required  pattern="[a-z]{1,15}">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr" required  pattern="[a-z]{1,15}"> Shipping address same as billing
+        </label>
+        <input type="button" id="them" value="Continue to checkout" class="btn" required  pattern="[a-z]{1,15}">
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      <hr>
+      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+    </div>
+  </div>
+</div>
+
+    <table  id="bang" style="text-align:center; width: 100%;">
+        <tr>
+            <th>full name</th>
+            <th>email</th>
+            <th>adr</th>
+            <th>city</th>
+            <th>state</th>
+            <th>zip</th>
+            <th>cname</th>
+            <th>cnum</th>
+            <th>expmonth</th>
+            <th>expyear</th>
+            <th>cvv</th>
+        </tr>
+
+    </table>
+
+    <script>
+
+        function thongtin(fname,email,adr,city,state,zip,cname,cnum,expmonth,expyear,cvv)
+        {
+            this.fname = fname;
+            this.email = email;
+            this.adr = adr;
+            this.city = city;
+            this.state = state;
+            this.zip = zip;
+            this.cname = cname;
+            this.cnum = cnum;
+            this.expmonth = expmonth;
+            this.expyear = expyear;
+            this.cvv = cvv;
+        }
+
+        // ánh xạ
+        const fname = document.querySelector('#fname')
+        const ttemail = document.getElementById('email')
+        const adr = document.getElementById('adr')
+        const city = document.getElementById('city')
+        const state = document.getElementById('state')
+        const zip = document.getElementById('zip')
+        const cname = document.getElementById('cname')
+        const cnum = document.getElementById('ccnum')
+        const expmonth = document.getElementById('expmonth')
+        const expyear = document.getElementById('expyear')
+        const cvv = document.getElementById('cvv')
+
+        
+
+        var array = [];
+        var content = ""
+        const them = document.getElementById('them')
+        const tablee = document.getElementById('bang')
+
+        function checkAddTable()
+        {
+
+        }
+
+
+        them.addEventListener('click',
+        function()
+        {
+
+          if( fname.value.trim == "" && ttemail.value.trim == "" && adr.value.trim == "" && city.value.trim == "" && state.value.trim == "" && zip.value.trim == ""   && cname.value.trim == "" && cnum.value.trim == "" && expmonth.value.trim == "" && expyear.value.trim == "" && cvv.value.trim )
+          {
+              alert(" bạn đã nhập thiếu một cái gì đó")
+          }
+          // else
+          // if(Number(ccnum.value) == 'NaN')
+          // {
+          //   alert(" bạn ccnum phải là số");
+          // }
+          else
+          if(expmonth.value.toLowerCase().trim() == "february" || 
+          expmonth.value.toLowerCase().trim() == "march" || 
+          expmonth.value.toLowerCase().trim() == "april" || 
+          expmonth.value.toLowerCase().trim() == "may" ||
+          expmonth.value.toLowerCase().trim() == "june" || 
+          expmonth.value.toLowerCase().trim() == "july" || 
+          expmonth.value.toLowerCase().trim() == "august" || 
+          expmonth.value.toLowerCase().trim() == "september" ||
+          expmonth.value.toLowerCase().trim() == "november" ||
+          expmonth.value.toLowerCase().trim() == "october" || 
+          expmonth.value.toLowerCase().trim() == "december" ||
+          expmonth.value.toLowerCase().trim() == "jan" || 
+          expmonth.value.toLowerCase().trim() == "feb" || 
+          expmonth.value.toLowerCase().trim() == "mar" || 
+          expmonth.value.toLowerCase().trim() == "apr" || 
+          expmonth.value.toLowerCase().trim() == "aug" || 
+          expmonth.value.toLowerCase().trim() == "sep" || 
+          expmonth.value.toLowerCase().trim() == "nov"
+           )
+          {
+           
+            var row = tablee.insertRow(array.length + 1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            var cell9 = row.insertCell(8);
+            var cell10 = row.insertCell(9);
+            var cell11 = row.insertCell(10);
+
+            cell1.innerHTML = fname.value;
+            cell2.innerHTML = ttemail.value;
+            cell3.innerHTML = adr.value;
+            cell4.innerHTML = city.value;
+            cell5.innerHTML = state.value;
+            cell6.innerHTML = zip.value;
+            cell7.innerHTML = cname.value;
+            cell8.innerHTML = cnum.value;
+            cell9.innerHTML = expmonth.value;
+            cell10.innerHTML = expyear.value;
+            cell11.innerHTML = cvv.value;
+
+          }
+          else
+          {
+            alert('Phần nhập tháng không hợp lệ')
+          }
+
+            
+
+
+            // var cell1 = row.insertCell(0);
+            
+
+        })
+
+
+
+     
+
+
+        
+
+
+    </script>
+
+
+</body>
+</html>
