@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <title>Responsive Checkout Form - LNTM</title>
+</head>
+<body>
+
+    <div class="header__container">
+        <h2>Responsive Checkout Form</h2>
+        <p class="header__intro">
+            Resize the browser window to see the effect. 
+            When the screen is less than 800px wide, 
+            make the two columns stack on top of each other instead of next to each other.
+        </p>
+    </div>
+
+    <div class="row body__container">
+        <form id="checkoutForm" class="column container form__container">
+            <div class="row input__form__container">
+                <div class="column form__column">
+                    <h3>Billing Address</h3>
+                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                    <input type="text" id="email" name="email" placeholder="john@example.com">
+                    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                    <label for="city"><i class="fa fa-institution"></i> City</label>
+                    <input type="text" id="city" name="city" placeholder="New York">
+                
+                    <div class="row form__row">
+                        <div class="column form__column">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" placeholder="NY">
+                        </div>
+                        <div class="column form__column">
+                            <label for="zip">Zip</label>
+                            <input type="text" id="zip" name="zip" placeholder="10001">
+                        </div>
+                    </div>
+                </div>
+                <div class="column form__column">
+                    <h3>Payment</h3>
+                    <label for="fname">Accepted Cards</label>
+                    <div class="icon__container">
+                        <i class="fa fa-cc-visa fa-2x" style="color:navy;"></i>
+                        <i class="fa fa-cc-amex fa-2x" style="color:blue;"></i>
+                        <i class="fa fa-cc-mastercard fa-2x" style="color:red;"></i>
+                        <i class="fa fa-cc-discover fa-2x" style="color:orange;"></i>
+                    </div>
+                    <label for="cname">Name on Card</label>
+                    <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                    <label for="ccnum">Credit card number</label>
+                    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                    <label for="expmonth">Exp Month</label>
+                    <input type="text" id="expmonth" name="expmonth" placeholder="September">
+    
+                    <div class="row form__row">
+                        <div class="column form__column">
+                            <label for="state">Exp Year</label>
+                            <input type="text" id="expyear" name="expyear" placeholder="NY">
+                        </div>
+                        <div class="column form__column">
+                            <label for="zip">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="10001">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <label>
+                <input type="checkbox" checked="checked">
+                Shipping address same as billing
+            </label> 
+            <input id="checkoutButton" type="submit" value="Continue to checkout" class="checkout__button">
+        </form>
+        <div class="column container cart__container">
+            <h4>Cart
+                <span class="price" style="color:black">
+                  <i class="fa fa-shopping-cart"></i>
+                  <b>4</b>
+                </span>
+            </h4>
+            <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+            <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+            <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+            <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+            <hr>
+            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+        </div>
+    </div>
+    <div id="checkoutTable" style="display:none;" class="container table__container">
+        <table>
+            <tr>
+              <th>Field</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+                <td><p>Full Name</p></td>
+                <td><p id="nameValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>Email</p></td>
+                <td><p id="emailValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>Address</p></td>
+                <td><p id="addressValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>City</p></td>
+                <td><p id="cityValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>State</p></td>
+                <td><p id="stateValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>Zip</p></td>
+                <td><p id="zipValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>Name on Card</p></td>
+                <td><p id="nameCardValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>Credit Card Number</p></td>
+                <td><p id="creditValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>Exp Month</p></td>
+                <td><p id="expMonthValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>Exp Year</p></td>
+                <td><p id="expYearValue"></p></td>
+            </tr>
+            <tr>
+                <td><p>CVV</p></td>
+                <td><p id="cvvValue"></p></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const checkoutButton = document.getElementById('checkoutButton');
+        var validated = true;
+            
+        function validateForm() {
+            const nameValue = document.getElementById("fname");
+            const emailValue = document.getElementById("email");
+            const zipValue = document.getElementById("zip");
+            const nameCardValue = document.getElementById("cname");
+            const creditValue = document.getElementById("ccnum");
+            const expMonthValue = document.getElementById("expmonth");
+            const expYearValue = document.getElementById("expyear");
+            const cvvValue = document.getElementById("cvv");
+
+            var emailRgex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var emailTest = emailRgex.test(emailValue.value);
+
+            var zipRgex = /(^\d{10}$)|(^\d{4}-\d{8}$)/;
+            var zipTest = zipRgex.test(zipValue.value);
+
+            var monthRgex = /^(0[1-9]|1[0-2])$/;
+            var monthTest = monthRgex.test(expMonthValue.value);
+
+            var yearRgex = /^(19[5-9]\d|20[0-4]\d|2050)$/;
+            var yearTest = yearRgex.test(expYearValue.value);
+
+            var cvvRgex = /^[0-9]{3,4}$/;
+            var cvvTest = cvvRgex.test(cvvValue.value);
+
+            if (!nameValue.value) {
+                validated = false;
+                nameValue.style.border = '0.1rem solid red';
+            }
+            if (!emailTest) {
+                validated = false;
+                emailValue.style.border = '0.1rem solid red';
+            }
+            if (!zipTest) {
+                validated = false;
+                zipValue.style.border = '0.1rem solid red';
+            }
+            if (!nameCardValue.value) {
+                validated = false;
+                nameCardValue.style.border = '0.1rem solid red';
+            }
+            if (!creditValue.value) {
+                validated = false;
+                creditValue.style.border = '0.1rem solid red';
+            }
+            if (!monthTest) {
+                validated = false;
+                expMonthValue.style.border = '0.1rem solid red';
+            }
+            if (!yearTest) {
+                validated = false;
+                expYearValue.style.border = '0.1rem solid red';
+            }
+            if (!cvvTest) {
+                validated = false;
+                cvvValue.style.border = '0.1rem solid red';
+            }
+        }
+        function onSubmit(validated) {
+          if (validated) {
+            document.getElementById("checkoutTable").style.display = "block";
+            function valueReturn(value) {
+                return value;
+            }
+            const nameValue = document.getElementById("fname").value;
+            const emailValue = document.getElementById("email").value;
+            const addressValue = document.getElementById("adr").value;
+            const cityValue = document.getElementById("city").value;
+            const stateValue = document.getElementById("state").value;
+            const zipValue = document.getElementById("zip").value;
+            const nameCardValue = document.getElementById("cname").value;
+            const creditValue = document.getElementById("ccnum").value;
+            const expMonthValue = document.getElementById("expmonth").value;
+            const expYearValue = document.getElementById("expyear").value;
+            const cvvValue = document.getElementById("cvv").value;
+            document.getElementById("nameValue").innerHTML = valueReturn(nameValue);
+            document.getElementById("emailValue").innerHTML = valueReturn(emailValue);
+            document.getElementById("addressValue").innerHTML = valueReturn(addressValue);
+            document.getElementById("cityValue").innerHTML = valueReturn(cityValue);
+            document.getElementById("stateValue").innerHTML = valueReturn(stateValue);
+            document.getElementById("zipValue").innerHTML = valueReturn(zipValue);
+            document.getElementById("nameCardValue").innerHTML = valueReturn(nameCardValue);
+            document.getElementById("creditValue").innerHTML = valueReturn(creditValue);
+            document.getElementById("expMonthValue").innerHTML = valueReturn(expMonthValue);
+            document.getElementById("expYearValue").innerHTML = valueReturn(expYearValue);
+            document.getElementById("cvvValue").innerHTML = valueReturn(cvvValue);
+          }    
+        }
+
+        checkoutButton.addEventListener('click', e => {
+            e.preventDefault(); //stop the page from reloading after clicking the button
+            validateForm(); //validate the input
+            onSubmit(validated); //output the table if validated
+        });
+    </script>
+
+
+</body>
+</html>
