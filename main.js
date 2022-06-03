@@ -15,7 +15,13 @@ const americanElement = document.querySelector("#american-card")
 const masterElement = document.querySelector("#master-card")
 const discoverElement = document.querySelector("#discover-card")
 
+const visaIcon = document.querySelector(".visa-icon")
+const americanIcon = document.querySelector(".american-icon")
+const masterIcon = document.querySelector(".mastercard-icon")
+const discoverIcon = document.querySelector(".discover-icon")
+
 const inputElements = document.querySelectorAll('input')
+
 
 const validEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
@@ -66,7 +72,42 @@ submitBtnElement.addEventListener('click', () => {
             }
         }
     }
-    console.log(cvvElement.value.trim().length);
+})
+
+visaElement.addEventListener('click', () => {
+    if (visaElement.checked) {
+        visaIcon.classList.add('checked')
+        americanIcon.classList.remove('checked')
+        masterIcon.classList.remove('checked')
+        discoverIcon.classList.remove('checked')
+    }
+})
+
+americanElement.addEventListener('click', () => {
+    if (americanElement.checked) {
+        visaIcon.classList.remove('checked')
+        americanIcon.classList.add('checked')
+        masterIcon.classList.remove('checked')
+        discoverIcon.classList.remove('checked')
+    }
+})
+
+masterIcon.addEventListener('click', () => {
+    if (masterElement.checked) {
+        visaIcon.classList.remove('checked')
+        americanIcon.classList.remove('checked')
+        masterIcon.classList.add('checked')
+        discoverIcon.classList.remove('checked')
+    }
+})
+
+discoverIcon.addEventListener('click', () => {
+    if (discoverElement.checked) {
+        visaIcon.classList.remove('checked')
+        americanIcon.classList.remove('checked')
+        masterIcon.classList.remove('checked')
+        discoverIcon.classList.add('checked')
+    }
 })
 
 for (let i = 0; i < inputElements.length; i++) {

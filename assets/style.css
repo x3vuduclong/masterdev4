@@ -31,8 +31,12 @@
     display: flex !important;
 }
 
-.active {
-    transform: scale(1.1);
+.error {
+    border: 1px solid #FF0000 !important;
+}
+
+.checked {
+    opacity: 1 !important;
 }
 
 #main {
@@ -81,10 +85,6 @@ form {
     border: 1px solid transparent;
 }
 
-.error {
-    border: 1px solid red !important;
-}
-
 .checkout-form .accepted-card {
     margin: 8px 0 12px;
 }
@@ -93,6 +93,7 @@ form {
     cursor: pointer;
     font-size: 32px;
     position: relative;
+    opacity: 0.5;
 }
 
 .checkout-form .accepted-card .card-brand {
@@ -108,6 +109,7 @@ form {
 
 .checkout-form .accepted-card i:hover {
     transform: scale(1.1);
+    opacity: 1;
 }
 
 .checkout-form .input-group {
@@ -200,11 +202,11 @@ table {
 }
 
 .submit-box th {
-    width: 300px;
+    width: 150px;
     text-align: left;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
     #main {
         flex-direction: column-reverse;
         padding: 0 10px;
