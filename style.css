@@ -65,7 +65,7 @@ input:focus {
 .form-control input:invalid i.fa-check-circle {
   color: red;
 } */
-.form-control {
+/* .form-control {
   position: relative;
 }
 .form-control input + span {
@@ -86,7 +86,7 @@ input:focus {
 .form-control input:valid + span::before {
   content: "✓";
   color: green;
-}
+} */
 
 label {
   margin-bottom: 5px;
