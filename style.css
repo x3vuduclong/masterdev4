@@ -50,7 +50,7 @@
 	font-size: 20px;
 	align-items: center;
 }
-@media all and (min-width: 1024px){
+@media all and (min-width: 801px){
 	.content-payment {
 		width: 48%;
 		margin-left: 4%;
@@ -148,7 +148,7 @@
 	width: 40%;
 	margin-bottom: 5px;
 }
-@media all and (max-width: 480px){
+@media all and (max-width: 800px){
 	.checkout-form {
 		margin: auto;
 		width: 90%;
