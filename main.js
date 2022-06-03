@@ -11,7 +11,7 @@ form.addEventListener("submit", handleSubmit)
 
 let inputs = document.querySelectorAll('input')
 inputs.forEach(input => {
-    input.addEventListener("focusout", (e) => validate(e.target))
+    input.addEventListener("blur", (e) => validate(e.target))
 })
 
 function validate(target) {
@@ -38,7 +38,7 @@ function validate(target) {
         }
     }
 
-    if (name === 'nameOnCard' || name === 'city') {
+    if (name === 'nameOnCard') {
         const re = /^[a-zA-z] ?([a-zA-z]|[a-zA-z] )*[a-zA-z]$/;
         if (!re.test(value)) {
             showError(name, `Field contains letters only!`, false)
