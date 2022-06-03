@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="/assets/image/logo.png">
+    <script defer src="/main.js"></script>
+
+</head>
+
+<body>
+    <h1 class="text-center page-name">CHECKOUT FORM</h1>
+    <div id="main">
+        <form>
+            <div class="checkout-form">
+                <div class="billing-address">
+                    <div class="title">Billing Address</div>
+
+                    <label for="fullname"><i class="fa-solid fa-user"></i>Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="John M.Doe" required>
+
+                    <label for="email"><i class="fa-solid fa-envelope"></i>Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+
+                    <label for="address"><i class="fa-solid fa-address-card"></i> Address</label>
+                    <input type="text" id="address" name="address" placeholder="542 W 15th Street">
+
+                    <label for="city"><i class="fa-solid fa-city"></i> City</label>
+                    <input type="text" id="city" name="city" placeholder="New York">
+                    <div class="input-group">
+                        <div>
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" placeholder="NY">
+                        </div>
+                        <div>
+                            <label for="zip">Zip</label>
+                            <input type="number" id="zip" name="zip" placeholder="10001" min="1000" max="99999" required>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="payment">
+                    <div class="title">Payment</div>
+
+                    <label for="accepted-card">Accepted Cards</label>
+                    <div class="accepted-card">
+                        <i class="fa-brands fa-cc-visa">
+                            <input class="card-brand" type="radio" id="visa" name="card" value="Visa" checked>
+                        </i>
+                        <i class="fa-brands fa-cc-amex">
+                            <input class="card-brand" type="radio" id="american-card" name="card" value="American Express">
+                        </i>
+                        <i class="fa-brands fa-cc-mastercard">
+                            <input class="card-brand" type="radio" id="master-card" name="card" value="Master Card">
+                        </i>
+                        <i class="fa-brands fa-cc-discover">
+                            <input class="card-brand" type="radio" id="discover-card" name="card" value="Discover">
+                        </i>
+                    </div>
+
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" name="card-name" placeholder="John More Doe" required>
+
+                    <label for="card-number">Credit card number</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1111 2222 3333 4444" required>
+
+                    <label for="month">Exp Month</label>
+                    <select id="month">
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="November">November</option>
+                      <option value="October">October</option>
+                      <option value="December">December</option>
+                    </select>
+
+                    <div class="input-group">
+                        <div>
+                            <label for="year">Exp Year</label>
+                            <input type="number" id="year" name="year" placeholder="2022" min="2022" required>
+                        </div>
+                        <div>
+                            <label for="cvv">CVV</label>
+                            <input type="number" id="cvv" name="cvv" placeholder="352" required>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="confirm-checkbox">
+                <input type="checkbox" name="confirm-input" id="confirm-input">
+                <span>Shipping address same as billing</span>
+            </div>
+
+            <button type="button" class="submit-btn">Continue to checkout</button>
+        </form>
+        <div class="cart">
+            <div class="cart-field">
+                <div class="text-bold">Cart</div>
+                <div class="text-bold">4</div>
+            </div>
+            <div class="cart-field">
+                <div><a href="#">Product 1</a></div>
+                <div class="text-gray">$15</div>
+            </div>
+            <div class="cart-field">
+                <div><a href="#">Product 2</a></div>
+                <div class="text-gray">$5</div>
+            </div>
+            <div class="cart-field">
+                <div><a href="#">Product 3</a></div>
+                <div class="text-gray">$8</div>
+            </div>
+            <div class="cart-field">
+                <div><a href="#">Product 4</a></div>
+                <div class="text-gray">$2</div>
+            </div>
+            <hr>
+            <div class="cart-field total">
+                <div>Total</div>
+                <div class="text-bold">$30</div>
+            </div>
+        </div>
+    </div>
+    <div class="submit-box">
+        <h1 class="text-center">Checkout Information</h1>
+        <table>
+            <tr>
+                <th>Fullname:</th>
+                <td id="fullname-data">No data</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td id="email-data">No data</td>
+            </tr>
+            <tr>
+                <th>Adress:</th>
+                <td id="address-data">No data</td>
+            </tr>
+            <tr>
+                <th>City:</th>
+                <td id="city-data">No data</td>
+            </tr>
+            <tr>
+                <th>State:</th>
+                <td id="state-data">No data</td>
+            </tr>
+            <tr>
+                <th>Zip:</th>
+                <td id="zip-data">No data</td>
+            </tr>
+            <tr>
+                <th>Type of Card:</th>
+                <td id="type-card-data">No data</td>
+            </tr>
+            <tr>
+                <th>Name on Card:</th>
+                <td id="card-name-data">No data</td>
+            </tr>
+            <tr>
+                <th>Credit card number:</th>
+                <td id="card-number-data">No data</td>
+            </tr>
+            <tr>
+                <th>Exp Month:</th>
+                <td id="month-data">No data</td>
+            </tr>
+            <tr>
+                <th>Exp Year:</th>
+                <td id="year-data">No data</td>
+            </tr>
+            <tr>
+                <th>CVV:</th>
+                <td id="cvv-data">No data</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
