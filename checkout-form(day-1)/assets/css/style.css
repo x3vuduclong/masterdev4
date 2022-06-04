@@ -1,0 +1,266 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+}
+ul {
+  list-style: none;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --main-color: #f2f2f2;
+  --secondary-color: #00ab6f;
+}
+p,
+i,
+input {
+  font-size: 14px;
+}
+span {
+  font-size: 16px;
+  /* font-weight: bold; */
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 1320px;
+}
+.requirement {
+  padding-top: 10px;
+}
+form {
+  padding: 20px 0;
+  display: flex;
+  gap: 20px;
+}
+.payment-wrapper {
+  width: 80%;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--main-color);
+}
+.payment-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.address,
+.payment {
+  width: 50%;
+}
+.input-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.input-item label {
+  margin-bottom: 5px;
+}
+.input-item input,
+.input-item select {
+  width: 100%;
+  height: 35px;
+  padding: 5px 10px;
+  border: 1px solid #00000040;
+  border-radius: 3px;
+}
+.input-item select:invalid {
+  color: gray;
+}
+option {
+  color: #000;
+}
+
+.error input,
+.error select {
+  border: 1px solid red;
+}
+.error label {
+  color: red;
+}
+.state-zip,
+.year-cvv {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.state-zip .input-item,
+.year-cvv .input-item {
+  width: 50%;
+}
+
+.cards-img {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0 15px;
+}
+.cards-img img {
+  max-width: 40px;
+}
+.confirm {
+  margin: 5px 0;
+}
+.confirm input,
+.confirm label {
+  cursor: pointer;
+}
+#submit {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 0;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+#submit:hover {
+  opacity: 0.8;
+}
+.cart {
+  width: 20%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--main-color);
+}
+.cart-title,
+.product-item,
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-title span {
+  font-weight: bold;
+}
+.cart-content {
+  position: relative;
+  padding-bottom: 10px;
+  margin: 10px 0;
+}
+.product-item a {
+  color: blue;
+}
+.product-item span {
+  opacity: 0.5;
+}
+.cart-content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #bfbfbf;
+}
+.cart-total span:last-child {
+  font-weight: bold;
+}
+.info-payment {
+  display: none;
+  padding-bottom: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td {
+  width: 50%;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .container {
+    padding: 20px;
+    width: 1320px;
+  }
+}
+@media (min-width: 740px) and (max-width: 1199px) {
+  .container {
+    padding: 20px;
+    width: 720px;
+  }
+  form {
+    flex-direction: column;
+  }
+  .payment-wrapper,
+  .cart {
+    width: 100%;
+  }
+}
+@media (max-width: 739px) {
+  body {
+    align-items: unset;
+  }
+  .container {
+    padding: 20px;
+    width: 540px;
+  }
+  form,
+  .payment-content {
+    flex-direction: column;
+  }
+  .payment-content {
+    justify-content: space-between;
+  }
+  .payment-wrapper,
+  .cart,
+  .address,
+  .payment {
+    width: 100%;
+  }
+  .state-zip .input-item,
+  .year-cvv .input-item {
+    width: 48%;
+  }
+  .state-zip,
+  .year-cvv {
+    gap: 5px;
+  }
+}

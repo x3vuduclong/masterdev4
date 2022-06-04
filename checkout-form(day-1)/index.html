@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Checkout Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title">Resposive Checkout Form</h2>
+      <p class="requirement">
+        Resize the browser window to see the effect. When the screen is less
+        than 800px wide, make the two columns stack on top of each other instead
+        of the next to each other.
+      </p>
+      <form action="">
+        <div class="payment-wrapper">
+          <div class="payment-content">
+            <div class="address">
+              <h3 class="title">Billing Address</h3>
+              <div class="input-item">
+                <label for="name">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Full Name</span>
+                </label>
+                <input
+                  type="text"
+                  name=""
+                  id="name"
+                  placeholder="John M. Doe"
+                />
+              </div>
+
+              <div class="input-item">
+                <label for="email">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>Email</span>
+                </label>
+                <input
+                  type="email"
+                  name=""
+                  id="email"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div class="input-item">
+                <label for="address">
+                  <i class="fa-solid fa-address-card"></i>
+                  <span>Address</span>
+                </label>
+                <input
+                  type="text"
+                  name=""
+                  id="address"
+                  placeholder="542 W. 15th Street"
+                />
+              </div>
+
+              <div class="input-item">
+                <label for="city">
+                  <i class="fa-solid fa-city"></i>
+                  <span>City</span>
+                </label>
+                <input type="text" name="" id="city" placeholder="New York" />
+              </div>
+              <div class="state-zip">
+                <div class="input-item">
+                  <label for="state">
+                    <span>State</span>
+                  </label>
+                  <input type="text" name="" id="state" placeholder="NY" />
+                </div>
+                <div class="input-item">
+                  <label for="zip">
+                    <span>Zip</span>
+                  </label>
+                  <input type="text" name="" id="zip" placeholder="10001" />
+                </div>
+              </div>
+            </div>
+
+            <div class="payment">
+              <h3 class="title">Payment</h3>
+              <div class="accepted-cards">
+                <span>Accepted-cards</span>
+                <div class="cards-img">
+                  <div class="cards-img-item">
+                    <img src="assets/image/visa.png" alt="visa" />
+                  </div>
+                  <div class="cards-img-item">
+                    <img src="assets/image/american-card.png" alt="american" />
+                  </div>
+                  <div class="cards-img-item">
+                    <img src="assets/image/mastercard.png" alt="mastercard" />
+                  </div>
+                  <div class="cards-img-item">
+                    <img src="assets/image/discover-card.png" alt="discover" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-item">
+                <label for="card-name">
+                  <span>Name on Card</span>
+                </label>
+                <input
+                  type="text"
+                  name=""
+                  id="card-name"
+                  placeholder="John More Doe"
+                />
+              </div>
+
+              <div class="input-item">
+                <label for="card-number">
+                  <span>Credit card number</span>
+                </label>
+                <input
+                  type="text"
+                  name=""
+                  id="card-number"
+                  placeholder="1111-2222-3333-4444"
+                />
+              </div>
+
+              <div class="input-item">
+                <label for="exp-month">
+                  <span>Exp Month</span>
+                </label>
+                <select name="" id="exp-month" required>
+                  <option value="" disabled selected hidden>
+                    Please Choose Month...
+                  </option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+              </div>
+
+              <div class="year-cvv">
+                <div class="input-item">
+                  <label for="exp-year">
+                    <span>Exp Year</span>
+                  </label>
+                  <input type="text" name="" id="exp-year" placeholder="2018" />
+                </div>
+                <div class="input-item">
+                  <label for="cvv">
+                    <span>CVV</span>
+                  </label>
+                  <input type="text" name="" id="cvv" placeholder="352" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="confirm">
+            <input type="checkbox" name="" id="confirm" checked />
+            <label for="confirm">Shipping address same as billing</label>
+          </div>
+          <button type="submit" id="submit">Continue to checkout</button>
+        </div>
+
+        <div class="cart">
+          <div class="cart-title">
+            <span>Cart</span>
+            <div>
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>4</span>
+            </div>
+          </div>
+          <ul class="cart-content">
+            <li class="product-item">
+              <a href="" class="product-name">Product 1</a>
+              <span>$15</span>
+            </li>
+            <li class="product-item">
+              <a href="" class="product-name">Product 2</a>
+              <span>$5</span>
+            </li>
+            <li class="product-item">
+              <a href="" class="product-name">Product 3</a>
+              <span>$8</span>
+            </li>
+            <li class="product-item">
+              <a href="" class="product-name">Product 4</a>
+              <span>$2</span>
+            </li>
+          </ul>
+          <div class="cart-total">
+            <span>Total</span>
+            <span>$30</span>
+          </div>
+        </div>
+      </form>
+      <div class="info-payment">
+        <table></table>
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
