@@ -42,6 +42,12 @@ input[type="number"] {
   padding: 12px 2px 12px 2px;
   border: 2 px solid #ccc;
   border-radius: 3px;
+  appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 input[type="email"] {
   width: 100%;
@@ -87,6 +93,10 @@ input:focus {
   content: "✓";
   color: green;
 } */
+a {
+  text-decoration: none;
+  color: black;
+}
 
 label {
   margin-bottom: 10px;
@@ -117,7 +127,7 @@ label {
 
 span.price {
   float: right;
-  color: grey;
+  color: rgb(65, 62, 62);
 }
 
 .checkout-table {

@@ -71,6 +71,7 @@ form.addEventListener("submit", (e) => {
     });
   toTable(data);
 });
+// On Blur
 cvv.addEventListener("blur", (e) => {
   if (cvvRegex.test(cvv.value)) {
     setSuccess(e.currentTarget);
@@ -129,10 +130,6 @@ expyear.addEventListener("blur", (e) => {
     e.currentTarget.value.trim() &&
     e.currentTarget.value >= d.getFullYear();
   if (expmonthBool) {
-    //   e.currentTarget.style.cssText = `
-    //   borderColor = "green";
-    // `;
-    //   e.currentTarget.setCustomValidity("");
     setSuccess(e.currentTarget);
   } else {
     setError(e.currentTarget);
@@ -145,6 +142,83 @@ cvv.addEventListener("blur", (e) => {
     setError(e.currentTarget);
   }
 });
+
+// On input
+cvv.addEventListener("input", (e) => {
+  if (cvvRegex.test(cvv.value)) {
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+
+fullname.addEventListener("input", (e) => {
+  if (nameRegex.test(e.currentTarget.value) && e.currentTarget.value.trim()) {
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+email.addEventListener("input", (e) => {
+  if (validRegex.test(e.currentTarget.value) && e.currentTarget.value.trim()) {
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+ccnum.addEventListener("input", (e) => {
+  if (cardnoAEX.test(e.currentTarget.value) && e.currentTarget.value.trim()) {
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+
+cname.addEventListener("input", (e) => {
+  if (nameRegex.test(e.currentTarget.value) && e.currentTarget.value.trim()) {
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+zip.addEventListener("input", (e) => {
+  if (zipRegex.test(e.currentTarget.value) && e.currentTarget.value.trim()) {
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+expmonth.addEventListener("input", (e) => {
+  if (monthRegex.test(e.currentTarget.value) && e.currentTarget.value.trim()) {
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+expyear.addEventListener("input", (e) => {
+  const d = new Date();
+  let expmonthBool =
+    yearRegex.test(e.currentTarget.value) &&
+    e.currentTarget.value.trim() &&
+    e.currentTarget.value >= d.getFullYear();
+  if (expmonthBool) {
+    //   e.currentTarget.style.cssText = `
+    //   borderColor = "green";
+    // `;
+    //   e.currentTarget.setCustomValidity("");
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+cvv.addEventListener("input", (e) => {
+  if (cvvRegex.test(e.currentTarget.value) && e.currentTarget.value.trim()) {
+    setSuccess(e.currentTarget);
+  } else {
+    setError(e.currentTarget);
+  }
+});
+
 function toTable(data) {
   const tableElement = document.getElementById("table-body");
   data.forEach((ele, index) => {
