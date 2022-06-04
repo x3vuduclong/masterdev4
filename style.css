@@ -31,21 +31,21 @@
 
 input[type="text"] {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
   padding: 12px 2px 12px 2px;
   border: 2 px solid #ccc;
   border-radius: 3px;
 }
 input[type="number"] {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
   padding: 12px 2px 12px 2px;
   border: 2 px solid #ccc;
   border-radius: 3px;
 }
 input[type="email"] {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
   padding: 12px 2px 12px 2px;
   border: 2 px solid #ccc;
   border-radius: 3px;
@@ -89,13 +89,13 @@ input:focus {
 } */
 
 label {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: block;
 }
 
 .icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
+  margin-bottom: 1rem;
+  padding: 4px 0;
   font-size: 32px;
 }
 
