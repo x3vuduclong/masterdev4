@@ -6,26 +6,34 @@ let form = getEL('myForm')
 let myNofity = getEL('myNofity')
 const successColor = '#0ba360'
 const failColor = '#dc3545'
+let errors = {}
 
 form.addEventListener("submit", handleSubmit)
 
 let inputs = document.querySelectorAll('input')
 inputs.forEach(input => {
-    input.addEventListener("blur", (e) => validate(e.target))
+    input.addEventListener("keyup", (e) => handleValidate(e.target))
 })
 
-function validate(target) {
+function showError(name, mess, check) {
+    if (!check) {
+        getEL(`${name}`).style.borderColor = failColor
+    } else {
+        getEL(`${name}`).style.borderColor = successColor
+        errors[name] = ''
+    }
+    errors[name] = mess
+    btn.classList.add('disabled')
+    getEL(`${name}_error`).innerHTML = mess
+}
+
+function handleValidate(target) {
     const { name, value, type } = target
     let check = true
+    let errorCount = 0
+
     if (type === 'checkbox') {
         return check
-    }
-
-    if (value.trim() === '') {
-        showError(name, `Field is required!`, false)
-        return !check
-    } else {
-        showError(name, '', true)
     }
 
     if (type === 'email') {
@@ -75,7 +83,7 @@ function validate(target) {
             showError(name, `Field contains numbers only!`, false)
             return !check
         } else if (name === "year" && value.length != 4) {
-            showError(name, `Year is invalid!`, false)
+            showError(name, `Exp year is invalid!`, false)
             return !check
         } else if (name === 'CVV' && value.length != 3) {
             showError(name, `CVV is invalid!`, false)
@@ -85,6 +93,22 @@ function validate(target) {
         }
     }
 
+    if (value.trim() === '') {
+        showError(name, `This field is required!`, false)
+        return !check
+    } else {
+        showError(name, '', true)
+    }
+
+    for (let err in errors) {
+        if (errors[err] !== '') {
+            errorCount++
+        }
+    }
+    if (errorCount == 0) {
+        btn.classList.remove('disabled')
+        btn.classList.add('active')
+    } 
     return check
 }
 
@@ -114,21 +138,11 @@ function createNotification(mess, check) {
     }, 4000)
 }
 
-function showError(name, mess, check) {
-    if (!check) {
-        getEL(`${name}`).style.borderColor = failColor
-    } else {
-        getEL(`${name}`).style.borderColor = successColor
-        btn.classList.remove('disabled')
-    }
-    getEL(`${name}_error`).innerHTML = mess
-}
-
 function handleSubmit(e) {
     e.preventDefault()
     let errorCount = 0
     for (let i = 0; i <= 11; i++) {
-        if (!validate(e.target[i])) {
+        if (!handleValidate(e.target[i])) {
             errorCount++
         }
     }
@@ -139,6 +153,7 @@ function handleSubmit(e) {
         return
     } else {
         btn.classList.remove('disabled')
+        btn.classList.remove('active')
         createNotification("Submit successfully!", true)
         for (let i = 0; i <= 11; i++) {
             const { name, value, type } = e.target[i]
@@ -153,5 +168,4 @@ function handleSubmit(e) {
             getEL(`${name}_text`).innerHTML = value
         }
     }
-
 }
