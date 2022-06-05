@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link type=”text/css” rel=”stylesheet” href=”css/font-awesome.min.css” /> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- CSS only -->
+    <link rel="shortcut icon" href="#" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" id="form-submit">
+        <div class="row">
+          <div class="col">
+            <h3 class="tittle">Billing Address</h3>
+            <div class="inputBox">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  height="15px"
+                  width="15px"
+                >
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                  /></svg
+                >Full name
+              </span>
+              <input
+                type="text"
+                oninput="checkFullname()"
+                placeholder="John Keneh"
+                id="fullname"
+              />
+            </div>
+            <div class="inputBox">
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  height="15px"
+                  width="15px"
+                >
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"
+                  />
+                </svg>
+                Email
+              </span>
+              <input type="text" placeholder="ghtk@example.com" id="email" />
+            </div>
+            <div class="inputBox">
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                  height="15px"
+                  width="15px"
+                >
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M512 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h448c35.35 0 64-28.65 64-64V96C576 60.65 547.3 32 512 32zM176 128c35.35 0 64 28.65 64 64s-28.65 64-64 64s-64-28.65-64-64S140.7 128 176 128zM272 384h-192C71.16 384 64 376.8 64 368C64 323.8 99.82 288 144 288h64c44.18 0 80 35.82 80 80C288 376.8 280.8 384 272 384zM496 320h-128C359.2 320 352 312.8 352 304S359.2 288 368 288h128C504.8 288 512 295.2 512 304S504.8 320 496 320zM496 256h-128C359.2 256 352 248.8 352 240S359.2 224 368 224h128C504.8 224 512 231.2 512 240S504.8 256 496 256zM496 192h-128C359.2 192 352 184.8 352 176S359.2 160 368 160h128C504.8 160 512 167.2 512 176S504.8 192 496 192z"
+                  />
+                </svg>
+                Address
+              </span>
+              <input type="text" placeholder="542 W.15th Street" />
+            </div>
+            <div class="inputBox">
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 512"
+                  height="15px"
+                  width="15px"
+                >
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M480 192H592C618.5 192 640 213.5 640 240V464C640 490.5 618.5 512 592 512H48C21.49 512 0 490.5 0 464V144C0 117.5 21.49 96 48 96H64V24C64 10.75 74.75 0 88 0C101.3 0 112 10.75 112 24V96H176V24C176 10.75 186.7 0 200 0C213.3 0 224 10.75 224 24V96H288V48C288 21.49 309.5 0 336 0H432C458.5 0 480 21.49 480 48V192zM576 368C576 359.2 568.8 352 560 352H528C519.2 352 512 359.2 512 368V400C512 408.8 519.2 416 528 416H560C568.8 416 576 408.8 576 400V368zM240 416C248.8 416 256 408.8 256 400V368C256 359.2 248.8 352 240 352H208C199.2 352 192 359.2 192 368V400C192 408.8 199.2 416 208 416H240zM128 368C128 359.2 120.8 352 112 352H80C71.16 352 64 359.2 64 368V400C64 408.8 71.16 416 80 416H112C120.8 416 128 408.8 128 400V368zM528 256C519.2 256 512 263.2 512 272V304C512 312.8 519.2 320 528 320H560C568.8 320 576 312.8 576 304V272C576 263.2 568.8 256 560 256H528zM256 176C256 167.2 248.8 160 240 160H208C199.2 160 192 167.2 192 176V208C192 216.8 199.2 224 208 224H240C248.8 224 256 216.8 256 208V176zM80 160C71.16 160 64 167.2 64 176V208C64 216.8 71.16 224 80 224H112C120.8 224 128 216.8 128 208V176C128 167.2 120.8 160 112 160H80zM256 272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272zM112 320C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304C64 312.8 71.16 320 80 320H112zM416 272C416 263.2 408.8 256 400 256H368C359.2 256 352 263.2 352 272V304C352 312.8 359.2 320 368 320H400C408.8 320 416 312.8 416 304V272zM368 64C359.2 64 352 71.16 352 80V112C352 120.8 359.2 128 368 128H400C408.8 128 416 120.8 416 112V80C416 71.16 408.8 64 400 64H368zM416 176C416 167.2 408.8 160 400 160H368C359.2 160 352 167.2 352 176V208C352 216.8 359.2 224 368 224H400C408.8 224 416 216.8 416 208V176z"
+                  />
+                </svg>
+                City
+              </span>
+              <input type="text" placeholder="542 W.15th Street" />
+            </div>
+            <div class="flex">
+              <div class="inputBox">
+                <span>State</span>
+                <input type="text" placeholder="NY" />
+              </div>
+              <div class="inputBox">
+                <span>Zip</span>
+                <input type="number" placeholder="1001" id="zip" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <h3 class="tittle">Payment</h3>
+            <div class="inputBox">
+              <span> Accepted Cards </span>
+              <img src="card_img.png" />
+            </div>
+            <div class="inputBox">
+              <span> Name on Card </span>
+              <input type="text" placeholder="nav wing" id="namecard" />
+            </div>
+            <div class="inputBox">
+              <span> Credit card number </span>
+              <input
+                type="number"
+                placeholder="1111-2222-3333-4444"
+                id="cardnumber"
+              />
+            </div>
+            <div class="inputBox">
+              <span> Exp month </span>
+              <input type="number" placeholder="September" id="expmonth" />
+            </div>
+            <div class="flex">
+              <div class="inputBox">
+                <span>Exp year</span>
+                <input type="number" placeholder="2018" id="expyear" />
+              </div>
+              <div class="inputBox">
+                <span>CVV</span>
+                <input type="number" placeholder="101" id="cvv" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="txt">
+          <input type="checkbox" name="" value=" " />Shipping address same as
+          billing
+        </div>
+        <div>
+          <input
+            type="submit"
+            value="Continue to checkout"
+            class="submit-btn"
+          />
+        </div>
+      </form>
+    </div>
+    <div>
+      <table style="width: 400px" id="table">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>fullname</th>
+            <th>email</th>
+            <th>name on card</th>
+            <th>card number</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
