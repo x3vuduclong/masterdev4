@@ -155,6 +155,10 @@ function handleSubmit(e) {
         btn.classList.remove('disabled')
         btn.classList.remove('active')
         createNotification("Submit successfully!", true)
+        window.scrollTo({
+            top: 1000,
+            behavior: 'smooth'
+          });
         for (let i = 0; i <= 11; i++) {
             const { name, value, type } = e.target[i]
             if (type === 'checkbox') {
