@@ -20,10 +20,8 @@ function showError(name, mess, check) {
         getEL(`${name}`).style.borderColor = failColor
     } else {
         getEL(`${name}`).style.borderColor = successColor
-        errors[name] = ''
     }
     errors[name] = mess
-    btn.classList.add('disabled')
     getEL(`${name}_error`).innerHTML = mess
 }
 
@@ -36,7 +34,15 @@ function handleValidate(target) {
         return check
     }
 
-    if (type === 'email') {
+    if (value.trim() === '') {
+        showError(name, `This field is required!`, false)
+        return !check
+    } else {
+        showError(name, '', true)
+    }
+
+
+    if (name === 'email') {
         const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         if (!re.test(value)) {
             showError(name, `Email is invalid!`, false)
@@ -93,22 +99,16 @@ function handleValidate(target) {
         }
     }
 
-    if (value.trim() === '') {
-        showError(name, `This field is required!`, false)
-        return !check
-    } else {
-        showError(name, '', true)
-    }
-
     for (let err in errors) {
         if (errors[err] !== '') {
             errorCount++
         }
     }
+    
     if (errorCount == 0) {
         btn.classList.remove('disabled')
         btn.classList.add('active')
-    } 
+    }
     return check
 }
 
@@ -158,7 +158,7 @@ function handleSubmit(e) {
         window.scrollTo({
             top: 1000,
             behavior: 'smooth'
-          });
+        });
         for (let i = 0; i <= 11; i++) {
             const { name, value, type } = e.target[i]
             if (type === 'checkbox') {
