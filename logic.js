@@ -44,19 +44,19 @@ row_1.appendChild(heading_10);
 row_1.appendChild(heading_11);
 thead.appendChild(row_1);
 
-function validateForm(){
-    let fullName = document.forms["myForm"]["fname"].value;
-    let email = document.forms["myForm"]["email"].value;
-    let address = document.forms["myForm"]["address"].value;
-    let city = document.forms["myForm"]["city"].value;
-    let state = document.forms["myForm"]["state"].value;
-    let zip = document.forms["myForm"]["zip"].value;
-    let nameOfCard =  document.forms["myForm"]["nameOfCard"].value;
-    let creditCardNum = document.forms["myForm"]["creditCardNum"].value;
-    let expMonth = document.forms["myForm"]["expMonth"].value;
-    let expYear = document.forms["myForm"]["expYear"].value;
-    let cvv = document.forms["myForm"]["cvv"].value;
-}
+// function validateForm(){
+//     let fullName = document.forms["myForm"]["fname"].value;
+//     let email = document.forms["myForm"]["email"].value;
+//     let address = document.forms["myForm"]["address"].value;
+//     let city = document.forms["myForm"]["city"].value;
+//     let state = document.forms["myForm"]["state"].value;
+//     let zip = document.forms["myForm"]["zip"].value;
+//     let nameOfCard =  document.forms["myForm"]["nameOfCard"].value;
+//     let creditCardNum = document.forms["myForm"]["creditCardNum"].value;
+//     let expMonth = document.forms["myForm"]["expMonth"].value;
+//     let expYear = document.forms["myForm"]["expYear"].value;
+//     let cvv = document.forms["myForm"]["cvv"].value;
+// }
 function submitButton(){
     let fullName = document.getElementById("fname").value;
     let email = document.getElementById("email").value;
@@ -71,7 +71,7 @@ function submitButton(){
     let cvv = document.getElementById("cvv").value;
     let value = [fullName,email,address,city,state,zip,nameOfCard,creditCardNum,expMonth,expYear,cvv];
     let row_2 = document.createElement('tr');
-    for(let i=0;i<value.length;i++){
+    for(let i=0;i<11;i++){
         let row_2_data_1 = document.createElement('td');
         row_2_data_1.innerHTML = value[i];
         row_2.appendChild(row_2_data_1);
