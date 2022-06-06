@@ -84,3 +84,13 @@ td,tr{
     border-radius: 5px;
     padding: 15px;
 }
+
+
+@media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }s
